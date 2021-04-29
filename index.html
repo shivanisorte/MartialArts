@@ -39,14 +39,44 @@ button:hover{
 button:active{
     background-color: #275e2b;
 }
+
+h2{
+    font-size: 100px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+    font-family: fantasy;
+}
+
+@media only screen and (max-width: 600px) {
+
+    h2{
+    font-size: 90px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    }
+
+button {
+  padding: 5px 15px;
+  text-align: center;
+  font-size: 23px;
+}
+
+#kick{
+    margin-left: 50px;
+}
+
+
+}
+
+
     </style>
 </head>
 <body>
     
-    <h2 style="font-size: 100px; margin-left: -5px; margin-bottom: 10px; font-family: fantasy;">LET'S TRAIN!!</h2>
+    <h2>LET'S TRAIN!!</h2>
     <canvas id="my-canvas" style="border: 2px solid black"; width="500"; height= "500"></canvas>
     <br><br>
-    <div style="margin-left: -40px;">
+    <div style="margin-left: -40px; margin-bottom: 40px;">
     <button id="kick">Kick (Left Arrow Key)</button>
     <button id="punch">Punch (Right Arrow Key)</button>
     <script src="main.js" type="text/javascript"></script>
