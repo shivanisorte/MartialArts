@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Martial Arts</title>
     <style>
         html, body {
     height: 100%;
@@ -19,14 +19,34 @@ body {
     display: table-cell;
     vertical-align: middle;
 }
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: rgb(2, 2, 2);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  font-family: fantasy;
+}
+
+button:hover{
+    background-color: #3c923f;
+}
+
+button:active{
+    background-color: #275e2b;
+}
     </style>
 </head>
 <body>
     
-    <h2>canvas</h2>
+    <h2 style="font-size: 100px; margin-left: -5px; margin-bottom: 10px; font-family: fantasy;">LET'S TRAIN!!</h2>
     <canvas id="my-canvas" style="border: 2px solid black"; width="500"; height= "500"></canvas>
     <br><br>
-    <div style="margin-left: 100px;">
+    <div style="margin-left: -40px;">
     <button id="kick">Kick (Left Arrow Key)</button>
     <button id="punch">Punch (Right Arrow Key)</button>
     <script src="main.js" type="text/javascript"></script>
