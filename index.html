@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martial Arts</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
         html, body {
     height: 100%;
@@ -20,7 +22,8 @@ body {
     vertical-align: middle;
 }
 
-button {
+
+.sty{
   background-color: #4CAF50; /* Green */
   border: none;
   color: rgb(2, 2, 2);
@@ -51,22 +54,22 @@ h2{
 
     h2{
     font-size: 60px;
-    margin-left: 35px;
+    margin-left: 30px;
     margin-bottom: 10px;
     }
 
-button {
-  padding: 3px 7px;
+.sty {
+  padding: 5px 12px;
   text-align: center;
-  font-size: 20px;
+  font-size: 23px;
 }
 
 #kick{
     margin-left: 50px;
 }
-/* #punch{
+#punch{
     margin-left: 10px;
-} */
+}
 
 }
 
@@ -79,9 +82,77 @@ button {
     <canvas id="my-canvas" style="border: 2px solid black"; width="500"; height= "500"></canvas>
     <br><br>
     <div style="margin-left: -40px; margin-bottom: 40px;">
-    <button id="kick">Kick (Left Arrow Key)</button>
-    <button id="punch">Punch (Right Arrow Key)</button>
-    <script src="main.js" type="text/javascript"></script>
+    <button class="sty" id="kick">Kick (Left Arrow Key)</button>
+    <button class="sty" id="punch">Punch (Right Arrow Key)</button>
 </div>
+<button id="clickme" class="center">Give Feedback</button>
+<div id="modal" class="modal-bg">
+	<div class="modal-container">
+		<div class="box modal-box text-center">
+			<button id="close" class="close-btn"><i class="fa fa-fw fa-close"></i></button>
+			<h1>Do you like training with us?</h1>
+			<p>Don't worry. We won't be upset if you select "Not Really".</p>
+			<div class="center">
+				<button id="lol" tabindex="-1">Not Really</button>
+				<button id="yes" tabindex="-1">Absolutely!</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="main.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+    (function() {
+	var clickMe = $("#clickme"),
+		modal = $("#modal.modal-bg"),
+		closeBtn = $("#close"),
+		lolBtn = $("#lol"),
+		yesBtn = $("#yes"),
+		count = 0;
+
+	function randNum(num) {
+		return Math.floor(Math.random() * num);
+	}
+
+	function resetLolBtn() {
+		$(this).css({
+			position: "static"
+		});
+	}
+
+	clickMe.on("click", function() {
+		console.log("click");
+		modal.fadeIn(250);
+		lolBtn.css({
+			position: "static"
+		});
+	});
+	closeBtn.on("click", function() {
+		modal.fadeOut(100);
+	});
+
+	lolBtn.on("mouseover", function() {
+		console.log("whoops");
+		count += 1;
+		console.log(count);
+
+		resetLolBtn();
+
+		$(this).css({
+			position: "absolute",
+			top: randNum(90) + "%",
+			left: randNum(90) + "%"
+		});
+	});
+	lolBtn.on("click", function() {
+		alert("Either there was a glitch in the matix or you are one sly devil. It took you " + count + " attempts.");
+		modal.fadeOut(150);
+	});
+	yesBtn.on("click", function() {
+		alert("Thank you, Stay Fit!");
+		modal.fadeOut(150);
+	});
+}());
+    </script>
+
 </body>
 </html>

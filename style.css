@@ -1,0 +1,104 @@
+.center {
+    margin: auto;
+  }
+  
+  .box {
+    background: #fff;
+    max-width: 560px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  button {
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #clickme {
+    border-radius: 3px;
+    display: block;
+    margin: 10% auto;
+    background: dodgerblue;
+    color: #fff;
+    border-color: transparent;
+    font-size: 1.2em;
+  }
+  #clickme:hover {
+    background: #389dff;
+  }
+  
+  .modal-bg {
+    display: none;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    /*position*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .modal-bg .modal-container {
+    height: 100%;
+    margin: auto;
+    /*position*/
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .modal-bg #close {
+    display: block;
+    padding: 0;
+    margin-top: -10px;
+    margin-right: -10px;
+    float: right;
+  }
+  .modal-bg #close.close-btn {
+    background: transparent;
+    color: #cecece;
+  }
+  .modal-bg #close.close-btn:hover {
+    color: #fff;
+    background: salmon;
+    border-color: transparent;
+  }
+  .modal-bg .modal-box {
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    padding: 20px;
+    margin-top: 10%;
+    z-index: 999;
+  }
+  .modal-bg .modal-box h1 {
+    margin: 0;
+    clear: both;
+  }
+  .modal-bg .modal-box .center {
+    width: 240px;
+    text-align: right;
+    margin: auto;
+  }
+  .modal-bg .modal-box button {
+    border-radius: 3px;
+    font-size: 1em;
+    margin-right: 10px;
+  }
+  .modal-bg .modal-box button:last-child {
+    margin: 0;
+    background: limegreen;
+    color: #fff;
+    border-color: transparent;
+  }
+  .modal-bg .modal-box button#lol {
+    z-index: 999;
+    background: #f85441;
+    color: #fff;
+    border-color: transparent;
+  }
+  .modal-bg .modal-box button#lol, .modal-bg .modal-box button#yes {
+    outline: none;
+  }

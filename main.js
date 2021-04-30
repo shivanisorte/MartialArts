@@ -92,6 +92,58 @@ loadImages((images)=>{
    
 
 
+    (function() {
+        var clickMe = $("#clickme"),
+            modal = $("#modal.modal-bg"),
+            closeBtn = $("#close"),
+            lolBtn = $("#lol"),
+            yesBtn = $("#yes"),
+            count = 0;
+    
+        function randNum(num) {
+            return Math.floor(Math.random() * num);
+        }
+    
+        function resetLolBtn() {
+            $(this).css({
+                position: "static"
+            });
+        }
+    
+        clickMe.on("click", function() {
+            console.log("click");
+            modal.fadeIn(250);
+            lolBtn.css({
+                position: "static"
+            });
+        });
+        closeBtn.on("click", function() {
+            modal.fadeOut(100);
+        });
+    
+        lolBtn.on("mouseover", function() {
+            console.log("whoops");
+            count += 1;
+            console.log(count);
+    
+            resetLolBtn();
+    
+            $(this).css({
+                position: "absolute",
+                top: randNum(90) + "%",
+                left: randNum(90) + "%"
+            });
+        });
+        lolBtn.on("click", function() {
+            alert("Either there was a glitch in the matix or you are one sly devil. It took you " + count + " attempts.");
+            modal.fadeOut(150);
+        });
+        yesBtn.on("click", function() {
+            alert("Thank you. Stay Fit!");
+            modal.fadeOut(150);
+        });
+    }());
+
 
 // loadImages((images)=>{
 //     let selectedAnimation='idle';
